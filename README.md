@@ -105,34 +105,6 @@ The application combines Flutter's Material Design components with animations an
 
 ---
 
-## Architecture
-
-Foodie follows a client-centric Flutter architecture with Firebase providing the backend services.
-
-```text
-┌─────────────────────────────────────────────┐
-│                 Flutter App                 │
-│                                             │
-│  ┌─────────────┐   ┌─────────────────────┐  │
-│  │    UI /     │   │      Provider       │  │
-│  │   Screens   │◄─►│   Cart State Layer  │  │
-│  └──────┬──────┘   └──────────┬──────────┘  │
-│         │                     │             │
-└─────────┼─────────────────────┼─────────────┘
-          │                     │
-          ▼                     ▼
-┌─────────────────────────────────────────────┐
-│                  Firebase                   │
-│                                             │
-│  ┌─────────────────┐  ┌──────────────────┐  │
-│  │    Firebase     │  │ Cloud Firestore  │  │
-│  │ Authentication  │  │                  │  │
-│  └─────────────────┘  └──────────────────┘  │
-│                                             │
-│  Users • Foods • Categories • Orders        │
-└─────────────────────────────────────────────┘
-```
-
 ### Data Flow
 
 ```text
@@ -222,11 +194,9 @@ The exact field names and Firestore structure should match the implementation in
 Foodie — Flutter Food Delivery App
 
 A full-stack mobile food delivery application built with Flutter and Firebase, designed to provide a complete food ordering experience from authentication and menu discovery to cart management, checkout, and order history.
->>>>>>> 59b95586a65a456d186719348810981c394d501c
 
 Foodie uses Cloud Firestore as its real-time backend and Firebase Authentication for user management, while Provider handles client-side cart state and application logic.
 
-<<<<<<< HEAD
 ### Prerequisites
 
 Make sure you have the following installed:
@@ -321,43 +291,6 @@ Orders
 ```
 
 Configure appropriate Firestore Security Rules before using the application in a production environment.
-
----
-
-## Application Flow
-
-```text
-App Launch
-    │
-    ▼
-Splash Screen
-    │
-    ├── Authenticated ─────► Home
-    │
-    └── Not Authenticated ─► Login / Signup
-                                │
-                                ▼
-                              Home
-                                │
-              ┌─────────────────┼─────────────────┐
-              ▼                 ▼                 ▼
-           Search           Categories       Food Details
-                                                  │
-                                                  ▼
-                                               Add Cart
-                                                  │
-                                                  ▼
-                                                Cart
-                                                  │
-                                                  ▼
-                                               Checkout
-                                                  │
-                                                  ▼
-                                             Create Order
-                                                  │
-                                                  ▼
-                                           Order History
-```
 
 ---
 
