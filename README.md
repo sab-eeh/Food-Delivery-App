@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Foodie — Flutter Food Delivery App
 
 A full-stack mobile food delivery application built with **Flutter** and **Firebase**, designed to provide a complete food ordering experience from authentication and menu discovery to cart management, checkout, and order history.
